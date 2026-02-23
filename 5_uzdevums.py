@@ -1,0 +1,24 @@
+def get_srv_status(nodes):
+    result = {}
+    for node in nodes:
+        if node["hostname"].startswith("Srv"):  # case‑sensitive as given
+            result[node["ip"]] = node["status"]
+    return result
+
+nodes = [
+    {"hostname": "Srv-Web-01", "ip": "10.0.1.1", "status": "UP", "latency": 120},
+    {"hostname": "Srv-DB-02", "ip": "10.0.1.2", "status": "UP", "latency": 80},
+    {"hostname": "Srv-Mail-03", "ip": "10.0.2.1", "status": "UP", "latency": 150},
+    {"hostname": "Srv-File-04", "ip": "192.168.1.10", "status": "UP", "latency": 45},
+    {"hostname": "Workstation-A", "ip": "192.168.1.20", "status": "DOWN", "latency": 0},
+    {"hostname": "Workstation-B", "ip": "192.168.1.21", "status": "UP", "latency": 105},
+    {"hostname": "Router-Core", "ip": "192.168.0.1", "status": "UP", "latency": 90},
+    {"hostname": "Router-Edge", "ip": "192.168.0.2", "status": "DOWN", "latency": 0},
+    {"hostname": "Srv-Backup-05", "ip": "192.168.2.5", "status": "UP", "latency": 200},
+    {"hostname": "Srv-Test-06", "ip": "192.168.2.6", "status": "UP", "latency": 95}
+]
+
+srv_dict = get_srv_status(nodes)
+print("Serveri, kuru nosaukums sākas ar 'Srv':")
+for ip, status in srv_dict.items():
+    print(f"{ip} : {status}")
