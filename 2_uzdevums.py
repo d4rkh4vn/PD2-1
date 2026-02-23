@@ -15,4 +15,4 @@ up_servers = [node for node in nodes if node["status"].upper() == "UP"]
 print(f"Kopā UP serveru: {len(up_servers)}")
 print("UP serveru nosaukumi:")
 for node in up_servers:
-    print(node["hostname"])
+    print(node["hostname"]) 
