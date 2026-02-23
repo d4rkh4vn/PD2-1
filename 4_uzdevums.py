@@ -18,4 +18,4 @@ for node in nodes:
 
 print("Pārveidotie nosaukumi:")
 for name in transformed:
-    print(name)
+    print(name) 
