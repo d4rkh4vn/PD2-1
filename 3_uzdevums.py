@@ -15,4 +15,4 @@ ip_part = input("Ievadiet IP adreses daļu (piemēram, '10.0'): ")
 matching = [node for node in nodes if node["ip"].startswith(ip_part)]
 print(f"Serveri tīklā {ip_part}:")
 for node in matching:
-    print(node["hostname"])
+    print(node["hostname"]) 
