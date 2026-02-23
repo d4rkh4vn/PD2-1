@@ -13,4 +13,4 @@ nodes = [
 
 print("Serveru nosaukumi:")
 for node in nodes:
-    print(node["hostname"])
+    print(node["hostname"]) 
