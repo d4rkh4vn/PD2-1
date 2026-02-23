@@ -14,4 +14,4 @@ nodes = [
 slow_servers = [node for node in nodes if node["latency"] > 100]
 for node in slow_servers:
     print(f"BRĪDINĀJUMS: {node['hostname']} ir lēns!")
-    
+     
