@@ -1,10 +1,3 @@
-def get_srv_status(nodes):
-    result = {}
-    for node in nodes:
-        if node["hostname"].startswith("Srv"):  # case‑sensitive as given
-            result[node["ip"]] = node["status"]
-    return result
-
 nodes = [
     {"hostname": "Srv-Web-01", "ip": "10.0.1.1", "status": "UP", "latency": 120},
     {"hostname": "Srv-DB-02", "ip": "10.0.1.2", "status": "UP", "latency": 80},
@@ -18,7 +11,6 @@ nodes = [
     {"hostname": "Srv-Test-06", "ip": "192.168.2.6", "status": "UP", "latency": 95}
 ]
 
-srv_dict = get_srv_status(nodes)
-print("Serveri, kuru nosaukums sākas ar 'Srv':")
-for ip, status in srv_dict.items():
-    print(f"{ip} : {status}")
+slow_servers = [node for node in nodes if node["latency"] > 100]
+for node in slow_servers:
+    print(f"BRĪDINĀJUMS: {node['hostname']} ir lēns!")
